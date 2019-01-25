@@ -1,0 +1,5 @@
+xcassets:
+  inputs: MRImagePicker/Supporting Files/Assets.xcassets
+  outputs:
+    templateName: swift4
+    output: MRImagePicker/Model/Assets/Assets.swift
