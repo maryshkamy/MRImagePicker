@@ -1,0 +1,24 @@
+PODS:
+  - Cartography (3.1.0)
+  - SwiftGen (6.0.2)
+  - SwiftLint (0.29.2)
+
+DEPENDENCIES:
+  - Cartography
+  - SwiftGen
+  - SwiftLint
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Cartography
+    - SwiftGen
+    - SwiftLint
+
+SPEC CHECKSUMS:
+  Cartography: 1988b7578871a56c036e7af17195cb2190edf18c
+  SwiftGen: e5b047067aa84082826a0c4f1c4c2ddc95bcf74c
+  SwiftLint: 47df60bdea6e7e902b193b6596db8683aafd86a3
+
+PODFILE CHECKSUM: 3f9dd0124eebca369399ff94ed312107b5c9bdb6
+
+COCOAPODS: 1.5.3
