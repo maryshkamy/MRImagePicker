@@ -165,6 +165,7 @@
 				7630059921FB409300EB7CB6 /* Resources */,
 				3824BC43220B83B89628D388 /* [CP] Embed Pods Frameworks */,
 				76A0949B21FB490400D30458 /* [CP] SwiftGen */,
+				761C395121FD1ABB0089CDAC /* [CP] SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -274,6 +275,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MRImagePicker/Pods-MRImagePicker-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		761C395121FD1ABB0089CDAC /* [CP] SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		76A0949B21FB490400D30458 /* [CP] SwiftGen */ = {
 			isa = PBXShellScriptBuildPhase;
