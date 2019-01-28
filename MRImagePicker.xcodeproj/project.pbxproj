@@ -14,6 +14,9 @@
 		763005A921FB409400EB7CB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 763005A721FB409400EB7CB6 /* LaunchScreen.storyboard */; };
 		763005B421FB409400EB7CB6 /* MRImagePickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763005B321FB409400EB7CB6 /* MRImagePickerTests.swift */; };
 		76A0949F21FB4A8C00D30458 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A0949E21FB4A8C00D30458 /* Assets.swift */; };
+		A1EF2FB121FF61D700784D4B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EF2FB021FF61D700784D4B /* AppCoordinator.swift */; };
+		A1EF2FB321FF61E200784D4B /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EF2FB221FF61E200784D4B /* Coordinator.swift */; };
+		A1EF2FB721FF6B2200784D4B /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EF2FB621FF6B2200784D4B /* TabBarCoordinator.swift */; };
 		E31F6E1CA637BAAEB2EEE773 /* Pods_MRImagePicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95980147A1EBEAF1F5777F19 /* Pods_MRImagePicker.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +45,9 @@
 		76A0949E21FB4A8C00D30458 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		796B3CC2F73F94EE4CA8857B /* Pods-MRImagePickerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRImagePickerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MRImagePickerTests/Pods-MRImagePickerTests.release.xcconfig"; sourceTree = "<group>"; };
 		95980147A1EBEAF1F5777F19 /* Pods_MRImagePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MRImagePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1EF2FB021FF61D700784D4B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		A1EF2FB221FF61E200784D4B /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		A1EF2FB621FF6B2200784D4B /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		A4BE27BFB0D7200EEE2D9911 /* Pods-MRImagePicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRImagePicker.release.xcconfig"; path = "Pods/Target Support Files/Pods-MRImagePicker/Pods-MRImagePicker.release.xcconfig"; sourceTree = "<group>"; };
 		F38A945CEF75FA9DDDD8FE0E /* Pods_MRImagePickerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MRImagePickerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -91,6 +97,7 @@
 			children = (
 				76A0949C21FB4A7900D30458 /* Model */,
 				76A0949A21FB474E00D30458 /* Supporting Files */,
+				A1EF2FB421FF6B0000784D4B /* View */,
 			);
 			path = MRImagePicker;
 			sourceTree = "<group>";
@@ -120,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				76A0949D21FB4A7F00D30458 /* Assets */,
+				A1EF2FAF21FF61AA00784D4B /* Coordinator */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -130,6 +138,31 @@
 				76A0949E21FB4A8C00D30458 /* Assets.swift */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		A1EF2FAF21FF61AA00784D4B /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				A1EF2FB021FF61D700784D4B /* AppCoordinator.swift */,
+				A1EF2FB221FF61E200784D4B /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		A1EF2FB421FF6B0000784D4B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A1EF2FB521FF6B0B00784D4B /* Tab Bar */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A1EF2FB521FF6B0B00784D4B /* Tab Bar */ = {
+			isa = PBXGroup;
+			children = (
+				A1EF2FB621FF6B2200784D4B /* TabBarCoordinator.swift */,
+			);
+			path = "Tab Bar";
 			sourceTree = "<group>";
 		};
 		CA8CC1DCAA36610BEC5AE94F /* Pods */ = {
@@ -363,7 +396,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1EF2FB321FF61E200784D4B /* Coordinator.swift in Sources */,
+				A1EF2FB121FF61D700784D4B /* AppCoordinator.swift in Sources */,
 				76A0949F21FB4A8C00D30458 /* Assets.swift in Sources */,
+				A1EF2FB721FF6B2200784D4B /* TabBarCoordinator.swift in Sources */,
 				7630059F21FB409300EB7CB6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
