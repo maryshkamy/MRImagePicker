@@ -15,7 +15,9 @@ class TabBarCoordinator: NSObject, Coordinator {
 
         super.init()
 
-        let vc1 = self.navigationViewControllerFactory(controller: UIViewController(), normal: nil, selected: nil)
+        let vc1 = self.navigationViewControllerFactory(controller: ImagePickerCoordinator().rootViewController,
+                                                       normal: Asset.camera.image,
+                                                       selected: nil)
         controller.setViewControllers([vc1], animated: true)
     }
 

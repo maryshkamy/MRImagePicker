@@ -14,6 +14,12 @@
 		763005A921FB409400EB7CB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 763005A721FB409400EB7CB6 /* LaunchScreen.storyboard */; };
 		763005B421FB409400EB7CB6 /* MRImagePickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763005B321FB409400EB7CB6 /* MRImagePickerTests.swift */; };
 		76A0949F21FB4A8C00D30458 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A0949E21FB4A8C00D30458 /* Assets.swift */; };
+		A147B01A221352930049F40A /* ImagePickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A147B019221352930049F40A /* ImagePickerCoordinator.swift */; };
+		A147B01E2213592E0049F40A /* ImagePickerPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A147B01D2213592E0049F40A /* ImagePickerPageViewController.swift */; };
+		A147B0222213645F0049F40A /* PickerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A147B0212213645F0049F40A /* PickerType.swift */; };
+		A147B024221365380049F40A /* ImagePickerViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A147B023221365380049F40A /* ImagePickerViewControllerDelegate.swift */; };
+		A147B026221366300049F40A /* ImagePickerPageViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A147B025221366300049F40A /* ImagePickerPageViewControllerDelegate.swift */; };
+		A147B028221376450049F40A /* ImagePickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A147B027221376450049F40A /* ImagePickerCollectionViewCell.swift */; };
 		A1EF2FB121FF61D700784D4B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EF2FB021FF61D700784D4B /* AppCoordinator.swift */; };
 		A1EF2FB321FF61E200784D4B /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EF2FB221FF61E200784D4B /* Coordinator.swift */; };
 		A1EF2FB721FF6B2200784D4B /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EF2FB621FF6B2200784D4B /* TabBarCoordinator.swift */; };
@@ -45,6 +51,12 @@
 		76A0949E21FB4A8C00D30458 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		796B3CC2F73F94EE4CA8857B /* Pods-MRImagePickerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRImagePickerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MRImagePickerTests/Pods-MRImagePickerTests.release.xcconfig"; sourceTree = "<group>"; };
 		95980147A1EBEAF1F5777F19 /* Pods_MRImagePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MRImagePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A147B019221352930049F40A /* ImagePickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerCoordinator.swift; sourceTree = "<group>"; };
+		A147B01D2213592E0049F40A /* ImagePickerPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerPageViewController.swift; sourceTree = "<group>"; };
+		A147B0212213645F0049F40A /* PickerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerType.swift; sourceTree = "<group>"; };
+		A147B023221365380049F40A /* ImagePickerViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerViewControllerDelegate.swift; sourceTree = "<group>"; };
+		A147B025221366300049F40A /* ImagePickerPageViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerPageViewControllerDelegate.swift; sourceTree = "<group>"; };
+		A147B027221376450049F40A /* ImagePickerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerCollectionViewCell.swift; sourceTree = "<group>"; };
 		A1EF2FB021FF61D700784D4B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		A1EF2FB221FF61E200784D4B /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		A1EF2FB621FF6B2200784D4B /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
@@ -128,6 +140,8 @@
 			children = (
 				76A0949D21FB4A7F00D30458 /* Assets */,
 				A1EF2FAF21FF61AA00784D4B /* Coordinator */,
+				A147B020221364170049F40A /* Entity */,
+				A147B01F221363EE0049F40A /* Extension */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -138,6 +152,49 @@
 				76A0949E21FB4A8C00D30458 /* Assets.swift */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		A147B018221352730049F40A /* Image Picker Group */ = {
+			isa = PBXGroup;
+			children = (
+				A147B01C221359050049F40A /* Image Picker */,
+			);
+			path = "Image Picker Group";
+			sourceTree = "<group>";
+		};
+		A147B01B221358F20049F40A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A147B027221376450049F40A /* ImagePickerCollectionViewCell.swift */,
+				A147B019221352930049F40A /* ImagePickerCoordinator.swift */,
+				A147B01D2213592E0049F40A /* ImagePickerPageViewController.swift */,
+				A147B025221366300049F40A /* ImagePickerPageViewControllerDelegate.swift */,
+				A147B023221365380049F40A /* ImagePickerViewControllerDelegate.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		A147B01C221359050049F40A /* Image Picker */ = {
+			isa = PBXGroup;
+			children = (
+				A147B01B221358F20049F40A /* Common */,
+			);
+			path = "Image Picker";
+			sourceTree = "<group>";
+		};
+		A147B01F221363EE0049F40A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		A147B020221364170049F40A /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				A147B0212213645F0049F40A /* PickerType.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		A1EF2FAF21FF61AA00784D4B /* Coordinator */ = {
@@ -152,6 +209,7 @@
 		A1EF2FB421FF6B0000784D4B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A147B018221352730049F40A /* Image Picker Group */,
 				A1EF2FB521FF6B0B00784D4B /* Tab Bar */,
 			);
 			path = View;
@@ -396,11 +454,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A147B024221365380049F40A /* ImagePickerViewControllerDelegate.swift in Sources */,
 				A1EF2FB321FF61E200784D4B /* Coordinator.swift in Sources */,
 				A1EF2FB121FF61D700784D4B /* AppCoordinator.swift in Sources */,
+				A147B01A221352930049F40A /* ImagePickerCoordinator.swift in Sources */,
 				76A0949F21FB4A8C00D30458 /* Assets.swift in Sources */,
+				A147B0222213645F0049F40A /* PickerType.swift in Sources */,
 				A1EF2FB721FF6B2200784D4B /* TabBarCoordinator.swift in Sources */,
 				7630059F21FB409300EB7CB6 /* AppDelegate.swift in Sources */,
+				A147B026221366300049F40A /* ImagePickerPageViewControllerDelegate.swift in Sources */,
+				A147B01E2213592E0049F40A /* ImagePickerPageViewController.swift in Sources */,
+				A147B028221376450049F40A /* ImagePickerCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
