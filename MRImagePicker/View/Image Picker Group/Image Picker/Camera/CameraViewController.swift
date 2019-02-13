@@ -1,6 +1,6 @@
 import UIKit
 
-class CameraViewController: UIViewController {
+class CameraViewController: UIViewController, ImagePickerViewControllerDelegate {
 
     // MARK: Private Property(ies)
 

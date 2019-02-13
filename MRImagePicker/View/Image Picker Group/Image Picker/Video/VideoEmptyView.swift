@@ -1,36 +1,22 @@
 import Cartography
 import UIKit
 
-class ImagePickerCollectionViewCell: UICollectionViewCell {
+class VideoEmptyView: UIView {
 
     // MARK: Private Property(ies)
 
     private let label: UILabel = {
         let view = UILabel()
-        view.textColor = .lightGray
+        view.numberOfLines = 0
         view.textAlignment = .center
-        view.font = .boldSystemFont(ofSize: 14)
+        view.font = .systemFont(ofSize: 14)
 
         return view
     }()
 
-    // MARK: Overrider Public Property(ies)
-
-    override var isHighlighted: Bool {
-        didSet {
-            self.label.textColor = isHighlighted ? .black : .lightGray
-        }
-    }
-
-    override var isSelected: Bool {
-        didSet {
-            self.label.textColor = isSelected ? .black : .lightGray
-        }
-    }
-
     // MARK: Constructor(s)
 
-    override init(frame: CGRect) {
+    init() {
         super.init(frame: .zero)
         self.setup()
     }
@@ -51,7 +37,7 @@ class ImagePickerCollectionViewCell: UICollectionViewCell {
     }
 
     private func setupLabelConstrain() {
-        self.contentView.addSubview(self.label)
+        self.addSubview(self.label)
         constrain(self.label, self) {
             $0.left == $1.left + 16
             $0.right == $1.right - 16

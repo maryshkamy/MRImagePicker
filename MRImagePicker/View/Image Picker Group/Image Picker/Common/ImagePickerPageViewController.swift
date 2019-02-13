@@ -11,7 +11,7 @@ class ImagePickerPageViewController: UIPageViewController {
 
     private let cameraViewController = CameraViewController()
     private let photoViewController = PhotosViewController()
-    private let videoViewController = UIViewController()
+    private let videoViewController = VideoViewController()
     private let imagePicker: [PickerType] = [.photo, .camera, .video]
 
     private let collectionView: UICollectionView = {
@@ -35,7 +35,7 @@ class ImagePickerPageViewController: UIPageViewController {
         willSet {
             self.cameraViewController.delegate = newValue
             self.photoViewController.delegate = newValue
-//            self.videoViewController.delegate = newValue
+            self.videoViewController.delegate = newValue
         }
     }
 
@@ -43,7 +43,6 @@ class ImagePickerPageViewController: UIPageViewController {
 
     init() {
         super.init(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
-        self.setupLayout()
     }
 
     required init?(coder: NSCoder) {
@@ -55,6 +54,8 @@ class ImagePickerPageViewController: UIPageViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setup()
+        self.setupLayout()
+        self.setupPages()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -67,17 +68,27 @@ class ImagePickerPageViewController: UIPageViewController {
     private func setup() {
         self.dataSource = self
         self.delegate = self
+    }
 
-//        self.imagePicker.forEach { (pickerType) in
-//            switch pickerType {
-//            case .camera:
-//                self.controllers.append(self.cameraViewController)
-//            case .photo:
-//                self.controllers.append(self.photoViewController)
-//            case .video:
-//                self.controllers.append(self.videoViewController)
-//            }
-//        }
+    private func setupLayout() {
+        self.setupBackgroundColor()
+        self.setupCollectionViewConstrain()
+
+        self.collectionView.dataSource = self
+        self.collectionView.delegate = self
+    }
+
+    private func setupPages() {
+        self.imagePicker.forEach { (pickerType) in
+            switch pickerType {
+            case .camera:
+                self.controllers.append(self.cameraViewController)
+            case .photo:
+                self.controllers.append(self.photoViewController)
+            case .video:
+                self.controllers.append(self.videoViewController)
+            }
+        }
 
         self.pages = self.controllers.map { $0 as? UIViewController ?? UIViewController() }
         self.collectionView.isHidden = self.imagePicker.count <= 1 ? true : false
@@ -89,16 +100,8 @@ class ImagePickerPageViewController: UIPageViewController {
         }
     }
 
-    private func setupLayout() {
-        self.setupBackgroundColor()
-        self.setupCollectionViewConstrain()
-
-        self.collectionView.dataSource = self
-        self.collectionView.delegate = self
-    }
-
     private func setupBackgroundColor() {
-        self.view.backgroundColor = .red
+        self.view.backgroundColor = .white
     }
 
     private func setupCollectionViewConstrain() {
@@ -117,14 +120,35 @@ extension ImagePickerPageViewController: UIPageViewControllerDataSource, UIPageV
     // MARK: UIPageViewController DataSource / Delegate(s)
 
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        if let viewControllerIndex = self.pages.index(of: viewController) {
+            if viewControllerIndex > 0 {
+                self.currentViewController = self.pages[viewControllerIndex - 1]
+
+                return self.pages[viewControllerIndex - 1]
+            }
+        }
+
         return nil
     }
 
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        if let viewControllerIndex = self.pages.index(of: viewController) {
+            if viewControllerIndex < self.pages.count - 1 {
+                self.currentViewController = self.pages[viewControllerIndex + 1]
+
+                return self.pages[viewControllerIndex + 1]
+            }
+        }
+
         return nil
     }
 
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        if let viewControllers = pageViewController.viewControllers {
+            if let viewControllerIndex  = self.pages.index(of: viewControllers[0]) {
+                self.collectionView.selectItem(at: IndexPath.init(row: viewControllerIndex, section: 0), animated: true, scrollPosition: [])
+            }
+        }
     }
 }
 
@@ -150,6 +174,13 @@ extension ImagePickerPageViewController: UICollectionViewDataSource, UICollectio
         if let viewController = self.currentViewController {
             let index = self.pages.index(of: viewController)
 
+//            if index! < indexPath.row {
+//                setViewControllers([self.pages[indexPath.row]], direction: .forward, animated: true, completion: nil)
+//                self.currentViewController = self.pages[indexPath.row]
+//            } else {
+//                setViewControllers([self.pages[indexPath.row]], direction: .reverse, animated: true, completion: nil)
+//                self.currentViewController = self.pages[indexPath.row]
+//            }
             setViewControllers([self.pages[indexPath.row]],
                                direction: index! < indexPath.row ? .forward : .reverse,
                                animated: true,

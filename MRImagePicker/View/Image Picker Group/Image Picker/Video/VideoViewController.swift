@@ -1,11 +1,11 @@
 import UIKit
 
-class PhotosViewController: UIViewController, ImagePickerViewControllerDelegate {
+class VideoViewController: UIViewController, ImagePickerViewControllerDelegate {
 
     // MARK: Private Property(ies)
 
-    private let photosView = PhotosView()
-    private let photoEmptyView = PhotosEmptyView()
+    private let videoView = VideoView()
+    private let videoEmptyView = VideoEmptyView()
 
     // MARK: Public Property(ies)
 
@@ -15,7 +15,7 @@ class PhotosViewController: UIViewController, ImagePickerViewControllerDelegate 
 
     override func loadView() {
         super.loadView()
-        self.view = self.photosView
+        self.view = self.videoView
     }
 
     override func viewDidLoad() {

@@ -20,6 +20,9 @@
 internal enum Asset {
   internal static let autorenew = ImageAsset(name: "autorenew")
   internal static let camera = ImageAsset(name: "camera")
+  internal static let chevronRight = ImageAsset(name: "chevronRight")
+  internal static let code = ImageAsset(name: "code")
+  internal static let expandMore = ImageAsset(name: "expandMore")
   internal static let flashAuto = ImageAsset(name: "flashAuto")
   internal static let flashOff = ImageAsset(name: "flashOff")
   internal static let flashOn = ImageAsset(name: "flashOn")
