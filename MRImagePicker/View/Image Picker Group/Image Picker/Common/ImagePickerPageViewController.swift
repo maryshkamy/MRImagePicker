@@ -9,8 +9,8 @@ class ImagePickerPageViewController: UIPageViewController {
     private var currentViewController: UIViewController?
     private var controllers = [ImagePickerViewControllerDelegate]()
 
-    private let cameraViewController = UIViewController()
-    private let photoViewController = UIViewController()
+    private let cameraViewController = CameraViewController()
+    private let photoViewController = PhotosViewController()
     private let videoViewController = UIViewController()
     private let imagePicker: [PickerType] = [.photo, .camera, .video]
 
@@ -31,13 +31,13 @@ class ImagePickerPageViewController: UIPageViewController {
 
     // MARK: Public Property(ies)
 
-//    var imagePickerDelegate: ImagePickerPageViewControllerDelegate? {
-//        willSet {
-//            self.cameraViewController.delegate = newValue
-//            self.photoViewController.delegate = newValue
+    var imagePickerDelegate: ImagePickerPageViewControllerDelegate? {
+        willSet {
+            self.cameraViewController.delegate = newValue
+            self.photoViewController.delegate = newValue
 //            self.videoViewController.delegate = newValue
-//        }
-//    }
+        }
+    }
 
     // MARK: Constructor(s)
 

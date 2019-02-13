@@ -18,7 +18,12 @@
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 internal enum Asset {
+  internal static let autorenew = ImageAsset(name: "autorenew")
   internal static let camera = ImageAsset(name: "camera")
+  internal static let flashAuto = ImageAsset(name: "flashAuto")
+  internal static let flashOff = ImageAsset(name: "flashOff")
+  internal static let flashOn = ImageAsset(name: "flashOn")
+  internal static let tripOrigin = ImageAsset(name: "tripOrigin")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

@@ -16,3 +16,6 @@ final class ImagePickerCoordinator: NSObject, Coordinator {
         super.init()
     }
 }
+
+extension ImagePickerCoordinator: ImagePickerPageViewControllerDelegate {
+}
